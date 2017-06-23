@@ -2,6 +2,9 @@
   "name": "angular-http-error",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Dominik Mathamnn"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
