@@ -1,3 +1,33 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Globaler HTTP Fehler Handler</div>
+
+    <div class="panel-body">
+      <div>
+        <div class="col-md-6 col-sm-12">
+          <button class="btn btn-block btn-primary" (click)="ladeDaten()">Lese Daten</button>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <button class="btn btn-block btn-danger" (click)="ladeFehlerhafteDaten()">Lese Daten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel" [class.panel-danger]="globalErrorMessage" [class.panel-primary]="!globalErrorMessage">
+    <div class="panel-heading" *ngIf="!globalErrorMessage">Daten:</div>
+
+    <div class="panel-body">
+      <div [ngSwitch]="globalErrorMessage==null">
+        <div *ngSwitchCase="false">
+          <div class="alert alert-danger">
+            {{globalErrorMessage}}
+          </div>
+        </div>
+        <div *ngSwitchCase="true">
+          {{userDaten|json}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
