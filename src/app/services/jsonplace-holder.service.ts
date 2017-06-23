@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
-import {SERVICE_BASE_URL} from '../tokens'
+import {SERVICE_BASE_URL} from '../tokens';
 
 @Injectable()
 export class JSONPlaceHolderService {
